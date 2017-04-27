@@ -64,8 +64,8 @@ void onion_random_init() {
 			ssize_t n;
 			n = read(fd, &sr, sizeof(sr));
 			if (n != sizeof(sr)) {
-				ONION_ERROR("Error reading seed value from /dev/random after file descriptor opened");
-				exit(1);
+				ONION_ERROR("Error reading seed value from /dev/random after file descriptor opened; using unsecure random number generation");
+				srand(time(NULL));
 			} else {
 				close(fd);
 				srand(sr);
