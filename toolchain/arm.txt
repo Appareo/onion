@@ -8,11 +8,11 @@ SET(CMAKE_SYSTEM_VERSION 1)
 SET(ARM yes)
 
 # specify the cross compiler
-SET(CMAKE_C_COMPILER   /usr/bin/arm-linux-gnueabi-gcc-4.5)
-SET(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabi-g++-4.5)
+SET(CMAKE_C_COMPILER   /usr/bin/arm-linux-gnueabi-gcc-4.5 CACHE STRING "C compiler path")
+SET(CMAKE_CXX_COMPILER /usr/bin/arm-linux-gnueabi-g++-4.5 CACHE STRING "C++ compiler path")
 
 # where is the target environment 
-SET(CMAKE_FIND_ROOT_PATH  /usr/arm-linux-gnueabi/)
+SET(CMAKE_FIND_ROOT_PATH  /usr/arm-linux-gnueabi/ CACHE STRING "System root path")
 
 # search for programs in the build host directories
 SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
